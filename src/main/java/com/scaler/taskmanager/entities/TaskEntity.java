@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.springframework.data.auditing.CurrentDateTimeProvider;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity(name = "tasks")
 public class TaskEntity extends BaseEntity{
