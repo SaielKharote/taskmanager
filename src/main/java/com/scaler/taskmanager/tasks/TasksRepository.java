@@ -1,9 +1,7 @@
-package com.scaler.taskmanager.repositories;
+package com.scaler.taskmanager.tasks;
 
-import com.scaler.taskmanager.entities.TaskEntity;
-import jakarta.persistence.criteria.From;
+import com.scaler.taskmanager.tasks.TaskEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;

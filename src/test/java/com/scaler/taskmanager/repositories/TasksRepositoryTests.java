@@ -1,11 +1,11 @@
 package com.scaler.taskmanager.repositories;
 
-import com.scaler.taskmanager.entities.TaskEntity;
+import com.scaler.taskmanager.tasks.TaskEntity;
+import com.scaler.taskmanager.tasks.TasksRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @DataJpaTest
 public class TasksRepositoryTests {
-    @Autowired TasksRepository tasksRepository;
+    @Autowired
+    TasksRepository tasksRepository;
 
     @Test
     public void testCreateTask() {
