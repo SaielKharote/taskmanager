@@ -31,6 +31,9 @@ public class TaskEntity {
     private String description;
 
     @Column(nullable = false)
+    private Date createdAt = new Date();
+
+    @Column(nullable = false)
     private Date dueDate;
 
     @Column(nullable = false)
