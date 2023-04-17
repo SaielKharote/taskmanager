@@ -1,11 +1,9 @@
 package com.scaler.taskmanager.tasks;
 
 import com.scaler.taskmanager.commons.ErrorResponseDTO;
-import com.scaler.taskmanager.notes.NoteEntity;
-import com.scaler.taskmanager.notes.NotesService;
 import com.scaler.taskmanager.tasks.dtos.CreateTaskDTO;
 import com.scaler.taskmanager.tasks.dtos.TaskResponseDTO;
-import com.scaler.taskmanager.tasks.dtos.updateTaskDTO;
+import com.scaler.taskmanager.tasks.dtos.UpdateTaskDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,14 +42,15 @@ public class TasksController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<TaskEntity> updateTask(@PathVariable("id") Integer id, @RequestBody updateTaskDTO body) throws ParseException {
-        TaskEntity task = tasksService.updateTask(body);
+    public ResponseEntity<TaskEntity> updateTask(@PathVariable("id") Integer id, @RequestBody UpdateTaskDTO updateTask) throws ParseException {
+        updateTask.setId(id);
+        TaskEntity updatedTask = tasksService.updateTask(updateTask);
 
-        if (task == null) {
+        if (updatedTask == null) {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok(task);
+        return ResponseEntity.ok(updatedTask);
     }
 
     @ExceptionHandler(Exception.class)

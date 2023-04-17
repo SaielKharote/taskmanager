@@ -2,9 +2,8 @@ package com.scaler.taskmanager.tasks;
 
 import com.scaler.taskmanager.tasks.dtos.CreateTaskDTO;
 import com.scaler.taskmanager.tasks.dtos.TaskResponseDTO;
-import com.scaler.taskmanager.tasks.dtos.updateTaskDTO;
+import com.scaler.taskmanager.tasks.dtos.UpdateTaskDTO;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -39,7 +38,7 @@ public class TasksService {
         return tasksRepository.findById(id).orElseThrow();
     }
 
-    public TaskEntity updateTask(updateTaskDTO updateTaskDTO) {
+    public TaskEntity updateTask(UpdateTaskDTO updateTaskDTO) {
         // Update the properties of the existing task entity with the new values from updateTaskDTO
         TaskEntity taskEntity = tasksRepository.findById(updateTaskDTO.getId()).orElse(null);
         if (taskEntity != null) {

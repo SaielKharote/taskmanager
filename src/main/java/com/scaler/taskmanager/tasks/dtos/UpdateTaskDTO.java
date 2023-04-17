@@ -9,7 +9,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class updateTaskDTO {
+public class UpdateTaskDTO {
     Integer Id;
     String title;
     String description;
